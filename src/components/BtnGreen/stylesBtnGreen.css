@@ -1,3 +1,21 @@
-.btn-green { border: 0; border-radius: 9px; background: #0f766e; color: #fff; cursor: pointer; font: inherit; font-weight: 700; padding: .72rem 1rem; transition: background .2s, transform .2s; }
-.btn-green:hover:not(:disabled) { background: #115e59; transform: translateY(-1px); }
-.btn-green:disabled { cursor: wait; opacity: .65; }
+.btn-green {
+  border: 0;
+  border-radius: 9px;
+  background: #0f766e;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.72rem 1rem;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.btn-green:hover:not(:disabled) {
+  background: #115e59;
+  transform: translateY(-1px);
+}
+.btn-green:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}

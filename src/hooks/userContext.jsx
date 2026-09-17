@@ -7,8 +7,24 @@ const UserContext = createContext(null);
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  useEffect(() => { api("/auth/me").then(({ user: currentUser }) => setUser(currentUser)).catch(() => setUser(null)).finally(() => setLoading(false)); }, []);
-  const value = useMemo(() => ({ user, loading, setUser, async logout() { await api("/auth/logout", { method: "POST" }); setUser(null); } }), [user, loading]);
+  useEffect(() => {
+    api("/auth/me")
+      .then(({ user: currentUser }) => setUser(currentUser))
+      .catch(() => setUser(null))
+      .finally(() => setLoading(false));
+  }, []);
+  const value = useMemo(
+    () => ({
+      user,
+      loading,
+      setUser,
+      async logout() {
+        await api("/auth/logout", { method: "POST" });
+        setUser(null);
+      },
+    }),
+    [user, loading],
+  );
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }
 
