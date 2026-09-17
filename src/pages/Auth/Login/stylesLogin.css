@@ -54,3 +54,36 @@
   font-size: 0.9rem;
   padding: 0.7rem;
 }
+.demo-access {
+  background: #edf7f5;
+  border: 1px solid #b9ddd7;
+  border-radius: 8px;
+  color: #24423d;
+  font-size: 0.78rem;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+}
+.demo-access strong {
+  color: #0f766e;
+}
+.demo-access p {
+  color: inherit !important;
+  margin: 0.35rem 0;
+}
+.demo-access ul {
+  margin: 0.35rem 0;
+  padding-left: 1.1rem;
+}
+.demo-access li {
+  margin: 0.2rem 0;
+}
+.demo-access small {
+  color: #46635e;
+  display: block;
+}
+.demo-access code {
+  background: #dbeeea;
+  border-radius: 3px;
+  color: #073b3a;
+  padding: 0.08rem 0.2rem;
+}

@@ -62,6 +62,27 @@ export default function Login() {
         </BtnGreen>
         <Link to="/password-reset">Esqueci minha senha</Link>
         <Link to="/register">Criar uma conta</Link>
+        <section className="demo-access" aria-label="Contas para demonstração">
+          <strong>Contas para demonstração</strong>
+          <p>
+            Use uma das contas abaixo para testar as permissões da aplicação.
+          </p>
+          <ul>
+            <li>
+              <b>Administrador:</b> admin.teste@estoque.local
+            </li>
+            <li>
+              <b>Vendedor:</b> vendedor.teste@estoque.local
+            </li>
+            <li>
+              <b>Estoquista:</b> estoquista.teste@estoque.local
+            </li>
+          </ul>
+          <small>
+            Senha: o perfil seguido de <code>#Estoque2026</code>. Ex.:{" "}
+            <code>Admin#Estoque2026</code>.
+          </small>
+        </section>
       </form>
     </section>
   );
