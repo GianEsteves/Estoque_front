@@ -81,8 +81,11 @@ export default function Register() {
             value={form.password}
             onChange={handleChange}
             required
-            minLength="8"
+            minLength="12"
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{12,}"
+            title="Use ao menos 12 caracteres, incluindo letra maiúscula, minúscula, número e símbolo."
           />
+          <small>Use ao menos 12 caracteres, incluindo maiúscula, minúscula, número e símbolo.</small>
         </label>
         <BtnGreen type="submit" disabled={pending}>
           {pending ? "Criando..." : "Criar conta"}
