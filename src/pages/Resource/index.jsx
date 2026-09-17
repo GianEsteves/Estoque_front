@@ -81,6 +81,7 @@ const resourceConfig = {
       ["paymentMethod", "Pagamento"],
       ["total", "Total"],
     ],
+    cancelable: true,
   },
   alerts: {
     title: "Alertas de estoque",
@@ -91,6 +92,17 @@ const resourceConfig = {
       ["currentQuantity", "Saldo"],
       ["minimumQuantity", "Mínimo"],
       ["severity", "Criticidade"],
+    ],
+  },
+  audit: {
+    title: "Auditoria",
+    endpoint: "/audit-logs",
+    key: "auditLogs",
+    columns: [
+      ["actor.name", "Responsável"],
+      ["action", "Ação"],
+      ["entityType", "Entidade"],
+      ["createdAt", "Data"],
     ],
   },
 };
@@ -122,6 +134,24 @@ export default function Resource({ name }) {
   const [pagination, setPagination] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
+  // Cancela uma venda com o motivo informado pela pessoa usuária.
+  async function cancelSale(sale) {
+    const reason = window.prompt("Informe o motivo do cancelamento:");
+    if (!reason) return;
+    try {
+      await api(`/sales/${sale.id}/cancel`, {
+        method: "POST",
+        body: { reason },
+      });
+      setItems((current) =>
+        current.map((item) =>
+          item.id === sale.id ? { ...item, status: "CANCELLED" } : item,
+        ),
+      );
+    } catch (requestError) {
+      setError(requestError.message);
+    }
+  }
   // Consulta a API sempre que a busca ou página forem alteradas.
   useEffect(() => {
     setLoading(true);
@@ -168,6 +198,7 @@ export default function Resource({ name }) {
                 {config.columns.map(([, label]) => (
                   <th key={label}>{label}</th>
                 ))}
+                {config.cancelable && <th>Ação</th>}
               </tr>
             </thead>
             <tbody>
@@ -176,6 +207,18 @@ export default function Resource({ name }) {
                   {config.columns.map(([key]) => (
                     <td key={key}>{displayValue(readValue(item, key), key)}</td>
                   ))}
+                  {config.cancelable && (
+                    <td>
+                      {item.status === "COMPLETED" && (
+                        <button
+                          className="table-action"
+                          onClick={() => cancelSale(item)}
+                        >
+                          Cancelar
+                        </button>
+                      )}
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>

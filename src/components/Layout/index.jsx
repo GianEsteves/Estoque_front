@@ -9,9 +9,16 @@ const links = [
   { to: "/suppliers", label: "Fornecedores" },
   { to: "/customers", label: "Clientes" },
   { to: "/inventory", label: "Estoque" },
+  { to: "/balances", label: "Saldos" },
   { to: "/movements", label: "Movimentações" },
   { to: "/sales", label: "Vendas" },
+  { to: "/sales/new", label: "Nova venda" },
+  { to: "/sales/report", label: "Relatório de vendas" },
   { to: "/alerts", label: "Alertas" },
+  { to: "/users", label: "Usuários" },
+  { to: "/permissions", label: "Permissões" },
+  { to: "/audit", label: "Auditoria" },
+  { to: "/account", label: "Minha conta" },
 ];
 
 // Exibe a navegação principal e o conteúdo protegido da aplicação.

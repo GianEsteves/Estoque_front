@@ -1,0 +1,54 @@
+.management-grid {
+  align-items: start;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(290px, 390px) 1fr;
+}
+.management-form {
+  background: #fff;
+  border: 1px solid #deebe8;
+  border-radius: 12px;
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+.management-form h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem;
+}
+.management-form label {
+  color: #334440;
+  display: grid;
+  font-size: 0.84rem;
+  font-weight: 700;
+  gap: 0.35rem;
+}
+.management-form input:not([type="checkbox"]),
+.management-form select {
+  border: 1px solid #bdd1cd;
+  border-radius: 7px;
+  font: inherit;
+  padding: 0.58rem;
+}
+.management-form .checkbox {
+  align-items: center;
+  display: flex;
+}
+.text-button,
+.table-action {
+  background: transparent;
+  border: 0;
+  color: #0f766e;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.45rem 0;
+}
+.table-action {
+  padding: 0.2rem;
+}
+@media (max-width: 1050px) {
+  .management-grid {
+    grid-template-columns: 1fr;
+  }
+}

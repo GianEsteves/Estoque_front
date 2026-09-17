@@ -263,6 +263,119 @@ th {
   cursor: not-allowed;
   opacity: 0.5;
 }
+.management-grid {
+  grid-template-columns: minmax(290px, 390px) 1fr;
+  align-items: start;
+  gap: 1.25rem;
+  display: grid;
+}
+.management-form {
+  background: #fff;
+  border: 1px solid #deebe8;
+  border-radius: 12px;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  display: grid;
+}
+.management-form h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+}
+.management-form label {
+  color: #334440;
+  gap: 0.35rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  display: grid;
+}
+.management-form input:not([type="checkbox"]),
+.management-form select {
+  font: inherit;
+  border: 1px solid #bdd1cd;
+  border-radius: 7px;
+  padding: 0.58rem;
+}
+.management-form .checkbox {
+  align-items: center;
+  display: flex;
+}
+.text-button,
+.table-action {
+  color: #0f766e;
+  cursor: pointer;
+  font: inherit;
+  background: 0 0;
+  border: 0;
+  padding: 0.45rem 0;
+  font-weight: 700;
+}
+.table-action {
+  padding: 0.2rem;
+}
+@media (width<=1050px) {
+  .management-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.operation-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  display: grid;
+}
+.operation-card {
+  background: #fff;
+  border: 1px solid #deebe8;
+  border-radius: 12px;
+  gap: 0.8rem;
+  padding: 1.25rem;
+  display: grid;
+}
+.operation-card.wide {
+  max-width: 900px;
+}
+.operation-card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.operation-card label {
+  color: #334440;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: grid;
+}
+.operation-card select,
+.operation-card input {
+  font: inherit;
+  border: 1px solid #bdd1cd;
+  border-radius: 7px;
+  padding: 0.58rem;
+}
+.line-item,
+.operation-top {
+  grid-template-columns: minmax(0, 1fr) 80px 100px auto;
+  gap: 0.5rem;
+  display: grid;
+}
+.operation-top {
+  grid-template-columns: repeat(3, 1fr);
+}
+.line-item button {
+  color: #b91c1c;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+}
+.sales-line {
+  grid-template-columns: minmax(0, 1fr) 80px 100px auto;
+}
+@media (width<=850px) {
+  .operation-grid,
+  .line-item,
+  .operation-top {
+    grid-template-columns: 1fr;
+  }
+}
 :root {
   color: #172321;
   font-synthesis: none;

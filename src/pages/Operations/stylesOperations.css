@@ -1,0 +1,61 @@
+.operation-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.operation-card {
+  background: #fff;
+  border: 1px solid #deebe8;
+  border-radius: 12px;
+  display: grid;
+  gap: 0.8rem;
+  padding: 1.25rem;
+}
+.operation-card.wide {
+  max-width: 900px;
+}
+.operation-card h2 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.operation-card label {
+  color: #334440;
+  display: grid;
+  font-size: 0.85rem;
+  font-weight: 700;
+  gap: 0.35rem;
+}
+.operation-card select,
+.operation-card input {
+  border: 1px solid #bdd1cd;
+  border-radius: 7px;
+  font: inherit;
+  padding: 0.58rem;
+}
+.line-item,
+.operation-top {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: minmax(0, 1fr) 80px 100px auto;
+}
+.operation-top {
+  grid-template-columns: repeat(3, 1fr);
+}
+.line-item button {
+  background: transparent;
+  border: 0;
+  color: #b91c1c;
+  cursor: pointer;
+}
+.sales-line {
+  grid-template-columns: minmax(0, 1fr) 80px 100px auto;
+}
+@media (max-width: 850px) {
+  .operation-grid {
+    grid-template-columns: 1fr;
+  }
+  .line-item,
+  .operation-top {
+    grid-template-columns: 1fr;
+  }
+}

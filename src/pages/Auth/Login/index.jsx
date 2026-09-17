@@ -60,6 +60,7 @@ export default function Login() {
         <BtnGreen type="submit" disabled={pending}>
           {pending ? "Entrando..." : "Entrar"}
         </BtnGreen>
+        <Link to="/password-reset">Esqueci minha senha</Link>
         <Link to="/register">Criar uma conta</Link>
       </form>
     </section>
