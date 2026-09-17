@@ -16758,7 +16758,8 @@ function er() {
               children: [
                 `Senha: o perfil seguido de `,
                 (0, P.jsx)(`code`, { children: `#Estoque2026` }),
-                `. Ex.: `,
+                `. Ex.:`,
+                ` `,
                 (0, P.jsx)(`code`, { children: `Admin#Estoque2026` }),
                 `.`,
               ],
