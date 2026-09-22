@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:6868";
+const API_URL = import.meta.env.VITE_API_URL;
 
 // Lê um cookie pelo nome para enviar o token CSRF ao backend.
 function getCookie(name) {
